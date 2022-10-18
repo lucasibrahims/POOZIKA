@@ -2,7 +2,7 @@
 #define  CLIENTEJURIDICO_H
 
 #include <string>
-#include "Venda.hpp"
+//#include "Venda.hpp"
 using namespace std;
 
 class ClienteJuridico{
@@ -12,7 +12,7 @@ class ClienteJuridico{
   string email;
   string telefone;
   string tipo;
-  vector<Venda> Compras;
+  //vector<Venda> Compras;
 
   public:
   ClienteJuridico(string nome, string tipo);

@@ -1,13 +1,16 @@
 #ifndef  ESTOQUE_HPP
 #define  ESTOQUE_HPP
+
 #include <vector>
 #include "Lote.hpp"
 
 using namespace std;
 
 class Estoque{
-vector<Lote> lotesAtuais;
-vector<Lote> lotesAntigos;
+
+  vector<Lote> lotesAtuais;
+  vector<Lote> lotesAntigos;
+  Produto Produto;
 
 public:
   void inserir(Lote l);

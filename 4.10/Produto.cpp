@@ -23,6 +23,7 @@
     this->lote_min = i;
     return 1;
   }
+  /*
   bool Produto::SetEstoque_min(int i) {
     this->estoque_min = 1;
     return 1;
@@ -32,6 +33,9 @@
     this->estoque=E;
     return 1;
   }
+  */
+
+
   string Produto::getNome() {
     return nome;
   }
@@ -47,9 +51,12 @@
   int Produto::getLote_min() {
     return lote_min;
   }
-  int Produto::getEstoque_min() {
+  
+  /* int Produto::getEstoque_min() {
     return estoque_min;
   }
   Estoque Produto::getEstoque() {
     return estoque;
   }
+  */
+ 

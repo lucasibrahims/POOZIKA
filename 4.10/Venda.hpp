@@ -5,7 +5,6 @@
 #include "Lote.hpp"
 #include "Produto.hpp"
 #include <vector>
-#include "Empresa.hpp"
 #include "ClienteJuridico.hpp"
 class Venda {
   private:

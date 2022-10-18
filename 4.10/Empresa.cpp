@@ -10,10 +10,15 @@ Empresa::Empresa(string new_nome, string new_cnpj){
   this->Cnpj = new_cnpj;
 }
 
-KbdBuffer *KbdBuffer::Instance () {
-if (instancePtr == 0) // if pointer is null...
-instancePtr = new KbdBuffer; // ... create instance
-return(instancePtr)
+Empresa::Empresa() {
+  nome = "Empresa";
+  Cnpj = "";
+}
+
+Empresa *Empresa::Instance () {
+  if (EmpresaPtr == 0) // if pointer is null...
+    EmpresaPtr = new Empresa; // ... create instance
+  return(EmpresaPtr);
 }
 
 bool ValidacaoCNPJ::linhaValida(const std::string &novoCnpj) const {
@@ -26,6 +31,7 @@ void ValidacaoCNPJ::processaLinha(const std::string &novoCnpj) const {
   }
 }
 
+/*
 bool Empresa::dissidioColetivo(float taxa) {
   for (int i = 0; i < Departamentos.size(); i++) {
     // Departamentos[i].doSomething(); // n sei como acessar
@@ -33,6 +39,7 @@ bool Empresa::dissidioColetivo(float taxa) {
   }
   return 1;
 }
+
 
 bool Empresa::setNome(string novoNome) {
   nome = novoNome;
@@ -77,10 +84,12 @@ ClienteJuridico &Empresa::getclientesJuridicos(size_t indice) {
   return this->clientesJuridicos.at(indice);
 }
 
-Empresa* Empresa::instance(){
+Empresa* Empresa::EmpresaPtr(){
   if (EmpresaPtr == 0){
       EmpresaPtr = new Empresa;
     return (EmpresaPtr);
   }
   
 }
+
+*/
