@@ -2,7 +2,7 @@
 #define VENDA_HPP
 
 #include "Data.hpp"
-#include "Lote.hpp"
+#include "Estoque.hpp"
 #include "Produto.hpp"
 #include <vector>
 #include "ClienteJuridico.hpp"
@@ -12,11 +12,12 @@ class Venda {
   Produto produto;
   int quantidade;
   vector<Lote> LotesComprados;
+  Estoque estoque;
 
 
   public:
-  Venda(Data data, Produto prod, int qnt, vector<Lote> lotes); //Constructor
-  bool ValidaQuantidade (int qnt, Produto prod);
+  Venda(Data data, Produto prod, int qnt, vector<Lote> LotesComprados, Estoque estoque); //Constructor
+  bool ValidaQuantidade (int qnt);
   void AtualizaEstoque();
   void ImprimeOrdem();
 

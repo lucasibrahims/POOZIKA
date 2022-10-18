@@ -31,14 +31,14 @@ void ValidacaoCNPJ::processaLinha(const std::string &novoCnpj) const {
   }
 }
 
-/*
-bool Empresa::dissidioColetivo(float taxa) {
-  for (int i = 0; i < Departamentos.size(); i++) {
-    // Departamentos[i].doSomething(); // n sei como acessar
-    // departamento.cargo.funcionario :(
-  }
-  return 1;
-}
+
+// bool Empresa::dissidioColetivo(float taxa) {
+//   for (int i = 0; i < Departamentos.size(); i++) {
+//     Departamentos[i].doSomething(); // n sei como acessar
+//     departamento.cargo.funcionario :(
+//   }
+//   return 1;
+// }
 
 
 bool Empresa::setNome(string novoNome) {
@@ -53,10 +53,10 @@ bool Empresa::setCnpj(string novoCnpj) {
   return 1;
 }
 
-bool Empresa::setDepartamentos(Departamento novosDepartamentos) {
-  this->Departamentos.push_back(novosDepartamentos);
-  return 1;
-}
+// bool Empresa::setDepartamentos(Departamento novosDepartamentos) {
+//   this->Departamentos.push_back(novosDepartamentos);
+//   return 1;
+// }
 
 bool Empresa::setClienteFisico(ClienteFisico novosClientesFisicos) {
   this->clientesFisicos.push_back(novosClientesFisicos);
@@ -72,9 +72,9 @@ string Empresa::getNome() { return nome; }
 
 string Empresa::getCnpj() { return Cnpj; }
 
-Departamento &Empresa::getDepartamentos(size_t indice) {
-  return this->Departamentos.at(indice);
-}
+// Departamento &Empresa::getDepartamentos(size_t indice) {
+//   return this->Departamentos.at(indice);
+// }
 
 ClienteFisico &Empresa::getclientesFisicos(size_t indice) {
   return this->clientesFisicos.at(indice);
@@ -91,5 +91,3 @@ Empresa* Empresa::EmpresaPtr(){
   }
   
 }
-
-*/

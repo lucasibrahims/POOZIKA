@@ -23,6 +23,7 @@ class Empresa{
 
   public:
     static Empresa* Instance();
+    Empresa* EmpresaPtr();
     bool setNome(string);
     bool setCnpj(string);
     //bool setDepartamentos(Departamento Departamentos);

@@ -13,16 +13,18 @@ class Lote{
 
   Data data;
   string identificador;
-  Produto produto;
   int QntMin;
   int QntAtual;
+  Produto produto;
 
   public:
 
-  Lote(Data Data, string identificador, Produto produto, int QntMin, int QntAtual);
+  Lote(Data Data, string identificador, int QntMin, int QntAtual, Produto produto);
 
   int getQntMin();
   int getQntAtual();
+  void setQntMin(int _qntMin);
+  void setQntAtual(int _qntAtual);
 };
 
 #endif

@@ -10,7 +10,6 @@ class Estoque{
 
   vector<Lote> lotesAtuais;
   vector<Lote> lotesAntigos;
-  Produto Produto;
 
 public:
   void inserir(Lote l);

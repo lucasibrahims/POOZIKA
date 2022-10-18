@@ -16,7 +16,7 @@
   }
 
   bool Funcionarios::setSalario(float salario, Data aumentoSalarioData){
-
+    return 1;
   }
 
   bool Funcionarios::Admitir(Data dataAdmissao){
@@ -31,5 +31,5 @@
   }
 
   bool Promover(Data dataPromocao){
-  
+    return 1;
   }
