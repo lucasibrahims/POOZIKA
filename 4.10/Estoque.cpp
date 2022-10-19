@@ -4,6 +4,20 @@
 #include <vector>
 
 
+Estoque::Estoque(vector<Lote> l_atuais, vector<Lote> l_antigos) {
+  lotesAtuais = l_atuais;
+  lotesAntigos = l_antigos;
+}
+
+Estoque::Estoque() {
+  vector<Lote> v1;
+  vector<Lote> v2;
+
+  lotesAtuais = v1;
+  lotesAntigos = v2;
+}
+
+
 void Estoque::inserir(Lote novolote){
     lotesAtuais.push_back(novolote);
     lotesAntigos.push_back(novolote);
@@ -32,4 +46,9 @@ int Estoque::getEstoqueTotal() {
 vector<Lote> Estoque::getLotesAtuais()
 {
   return this->lotesAtuais;
+}
+
+vector<Lote> Estoque::getLotesAntigos()
+{
+  return this->lotesAntigos;
 }

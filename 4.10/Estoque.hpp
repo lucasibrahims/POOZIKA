@@ -12,10 +12,14 @@ class Estoque{
   vector<Lote> lotesAntigos;
 
 public:
+  Estoque(vector<Lote> l_atuais, vector<Lote> l_antigos);
+  Estoque();
+
   void inserir(Lote l);
   void remover(Lote l);
   int getEstoqueTotal();
   vector<Lote> getLotesAtuais();
+  vector<Lote> getLotesAntigos();
 };
 
 

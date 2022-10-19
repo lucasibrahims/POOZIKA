@@ -21,10 +21,15 @@ class Lote{
 
   Lote(Data Data, string identificador, int QntMin, int QntAtual, Produto produto);
 
+  Data getData();
+  string getId();
+  Produto getProduto();
   int getQntMin();
   int getQntAtual();
   void setQntMin(int _qntMin);
   void setQntAtual(int _qntAtual);
+
+  Lote& operator=(Lote& segundo);
 };
 
 #endif
