@@ -4,8 +4,8 @@
 #include <string.h>
 #include <cstddef>
 #include <time.h>
-#include "Data.hpp"
-#include "ExecaoCustomizada.hpp"
+#include "Data.h"
+#include "ExecaoCustomizada.h"
 
 using namespace std;
 
@@ -162,8 +162,10 @@ bool Data::operator>(Data &d2)
 Data Data::operator-(Data &d2)
 {
     Data aux(ticks-d2.getTicks());
-    if (ticks<d2.getTicks())        //Tratamento de excecao se for tentada uma subtracao impossivel
-        throw ExecaoCustomizada("Erro: Resultado eh data negativa, inverta parametros");
+    if (ticks<d2.getTicks()) {        //Tratamento de excecao se for tentada uma subtracao impossivel
+        char message[100] = "Erro: Resultado eh data negativa, inverta parametros";
+        throw ExecaoCustomizada(message);
+    }
     else
         return aux;
 }
@@ -289,6 +291,10 @@ bool Data::validaData()
         if ((mes==2)&&(dia>28))
             condicao= 0;
     }
+    if (condicao==0) { 
+        char message[100] = "Data inválida.";
+        throw ExecaoCustomizada(message);
+    }
     return (condicao==1);
 }
 
@@ -312,8 +318,10 @@ void Data::printData()
         cout << ano << formatoData.getSeparadorData() << mes << formatoData.getSeparadorData() << dia << "  ";
         cout << hora << formatoData.getSeparadorHorario() << minuto << formatoData.getSeparadorHorario() << segundo << endl;
     }
-    else        //Tratamento de excecao de formato invalido
-        throw ExecaoCustomizada("Erro: Esperado argumento PT-BR ou EN-US");
+    else {       //Tratamento de excecao de formato invalido
+        char message[100] = "Erro: Esperado argumento PT-BR ou EN-US";
+        throw ExecaoCustomizada(message);
+    }
 }
 
 string Data::getData() {
@@ -327,8 +335,10 @@ string Data::getData() {
     {
        data = std::to_string(ano) + formatoData.getSeparadorData() + std::to_string(mes) + formatoData.getSeparadorData() + to_string(dia) + " " + to_string(hora)  + formatoData.getSeparadorHorario() + to_string(minuto) + formatoData.getSeparadorHorario() + to_string(segundo);
     }
-    else        //Tratamento de excecao de formato invalido
-        throw ExecaoCustomizada("Erro: Esperado argumento PT-BR ou EN-US");
+    else {       //Tratamento de excecao de formato invalido
+        char message[100] = "Erro: Esperado argumento PT-BR ou EN-US";
+        throw ExecaoCustomizada(message);
+    }
   return data;
 }
 
