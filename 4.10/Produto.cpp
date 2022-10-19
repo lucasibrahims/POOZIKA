@@ -1,7 +1,53 @@
 #include "Produto.hpp"
-#include "Estoque.cpp"
 #include <string.h>
 #include <string>
+#include <vector>
+#include <iostream>
+
+  using namespace std;
+
+  Produto::Produto() {
+
+  nome = "";
+  codigo = "";
+    std::vector<float> v(1,0);
+  valores = v;
+  categoria = "";
+  lote_min = 0;
+  estoque_min = 0;
+
+  }
+
+  Produto::Produto(string n, string cod, vector<float> val, string cat, 
+          int l_min, int est_min) {
+  nome = n;
+  codigo = cod;
+  valores = val;
+  categoria = cat;
+  lote_min = l_min;
+  estoque_min = est_min;
+
+  }
+
+  Produto& Produto::operator=(Produto& segundo) {
+    //if(this == &segundo) return this;
+
+    nome = segundo.getNome();
+    codigo = segundo.getCodigo();
+    categoria = segundo.getCategoria();
+    lote_min = segundo.getLote_min();
+    estoque_min = segundo.getEstoque_min();
+
+    return *this;
+  }
+
+   // inline bool operator==(Produto& dir) {
+  //   if(codigo == dir.getCodigo()) return true;
+
+  //   return false;
+  // }
+  
+
 
   bool Produto::SetNome(string s) {
     this->nome = s;
@@ -23,18 +69,11 @@
     this->lote_min = i;
     return 1;
   }
-  /*
+  
   bool Produto::SetEstoque_min(int i) {
     this->estoque_min = 1;
     return 1;
   }
-
-  bool Produto::SetEstoque(Estoque E) {
-    this->estoque=E;
-    return 1;
-  }
-  */
-
 
   string Produto::getNome() {
     return nome;
@@ -52,11 +91,23 @@
     return lote_min;
   }
   
-  /* int Produto::getEstoque_min() {
+  int Produto::getEstoque_min() {
     return estoque_min;
   }
-  Estoque Produto::getEstoque() {
-    return estoque;
+ 
+  bool Produto::imprimeProduto() {
+    cout << endl;
+    cout << "Dados do produto: " << endl;
+    cout << "Nome: " << this->getNome() << endl;
+    cout << "Categoria: " << this->getCategoria() << endl;
+    cout << "Codigo: " << this->getCodigo() << endl;
+    cout << "Ultimo valor: " << this->getValor() << endl;
+    cout << "Estoque minimo: " << this->getEstoque_min() << endl;
+    cout << "Lote minimo: " << this->getLote_min() << endl;
+    
+
+    return 0;
   }
-  */
+
+
  
