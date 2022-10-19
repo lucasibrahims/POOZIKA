@@ -23,7 +23,7 @@ class Lote{
 
   Data getData();
   string getId();
-  Produto getProduto();
+  Produto& getProduto();
   int getQntMin();
   int getQntAtual();
   void setQntMin(int _qntMin);

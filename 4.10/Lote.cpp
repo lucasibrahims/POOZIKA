@@ -2,12 +2,16 @@
 
 
 Lote::Lote (Data data_, string identificador_, int QntMin_, int QntAtual_, Produto produto_) {
+
+  //Conferindo se o lote produz a quantidade suficiente
+  if(QntAtual_ < QntMin_) return;
+
   this->data = data_;
   this->identificador = identificador_;
   this-> produto = produto_;
   this-> QntMin = QntMin_;
   this -> QntAtual = QntAtual_;
-  }
+}
 
   Data Lote::getData() {
     return this->data;
@@ -17,7 +21,7 @@ Lote::Lote (Data data_, string identificador_, int QntMin_, int QntAtual_, Produ
     return identificador;
   }
 
-  Produto Lote::getProduto() {
+  Produto& Lote::getProduto() {
     return produto;
   }
 
