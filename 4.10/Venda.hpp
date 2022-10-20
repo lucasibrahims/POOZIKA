@@ -5,7 +5,6 @@
 #include "Estoque.hpp"
 #include "Produto.hpp"
 #include <vector>
-#include "ClienteJuridico.hpp"
 class Venda {
   private:
   Data data;
