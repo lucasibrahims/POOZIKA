@@ -30,6 +30,7 @@ class Lote{
   void setQntAtual(int _qntAtual);
 
   Lote& operator=(Lote& segundo);
+  void imprimeLote();
 };
 
 #endif

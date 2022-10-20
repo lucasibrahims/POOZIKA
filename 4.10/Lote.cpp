@@ -1,5 +1,5 @@
 #include "Lote.hpp"
-
+#include <iostream>
 
 Lote::Lote (Data data_, string identificador_, int QntMin_, int QntAtual_, Produto produto_) {
 
@@ -52,4 +52,22 @@ Lote& Lote::operator=(Lote& segundo) {
   QntMin = segundo.getQntMin();
   QntAtual = segundo.getQntAtual();
   produto = segundo.getProduto();
+
+  return *this;
+}
+
+void Lote::imprimeLote() {
+
+  //   Data data;
+  // string identificador;
+  // int QntMin;
+  // int QntAtual;
+  // Produto produto;
+
+  cout << "+ Data: " << data.getData() << endl;
+  cout << "+ ID: " << this->getId() << endl;
+  cout << "+ Quantidade atual: " << this->getQntAtual() << endl;
+  cout << "+ Quantidade min.: " << this->getQntMin() << endl;
+
+
 }

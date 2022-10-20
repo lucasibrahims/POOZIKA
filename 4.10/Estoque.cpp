@@ -2,11 +2,20 @@
 #include <string>
 #include "Estoque.hpp"
 #include <vector>
+#include <iostream>
+
+using namespace std;
 
 
 Estoque::Estoque(vector<Lote> l_atuais, vector<Lote> l_antigos) {
   lotesAtuais = l_atuais;
   lotesAntigos = l_antigos;
+}
+
+Estoque::Estoque(vector<Lote> l_atuais) {
+  lotesAtuais = l_atuais;
+  vector<Lote> v2;
+  lotesAntigos = v2;
 }
 
 Estoque::Estoque() {
@@ -27,9 +36,12 @@ void Estoque::inserir(Lote novolote){
 void Estoque::remover(Lote l){
   for (vector<Lote>::iterator it = lotesAtuais.begin(); it != 
     lotesAtuais.end(); it++){
-    lotesAtuais.erase(lotesAtuais.begin());
+    
+      if(l.getId() == it->getId()) {
+         this->getLotesAtuais().erase(it);
+         break;
+      }
   }
-  
 }
 
 int Estoque::getEstoqueTotal() {
@@ -51,4 +63,18 @@ vector<Lote> Estoque::getLotesAtuais()
 vector<Lote> Estoque::getLotesAntigos()
 {
   return this->lotesAntigos;
+}
+
+void Estoque::imprimeEstoque() {
+
+  cout << endl << "Estoque de " << lotesAtuais.front().getProduto().getNome() << endl;
+
+  for (vector<Lote>::iterator it = lotesAtuais.begin(); it != lotesAtuais.end(); it++)
+  {
+    int i = 0;
+    cout << "---- " << "Lote " << i << " ----" << endl;
+    it->imprimeLote();
+  }
+  
+
 }

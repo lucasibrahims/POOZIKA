@@ -13,6 +13,7 @@ class Estoque{
 
 public:
   Estoque(vector<Lote> l_atuais, vector<Lote> l_antigos);
+  Estoque(vector<Lote> l_atuais);
   Estoque();
 
   void inserir(Lote l);
@@ -20,6 +21,7 @@ public:
   int getEstoqueTotal();
   vector<Lote> getLotesAtuais();
   vector<Lote> getLotesAntigos();
+  void imprimeEstoque();
 };
 
 
