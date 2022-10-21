@@ -12,21 +12,19 @@
 class Orcamento {
 
     Cliente cliente;
-    //map<Produto, int> produtos;
-    static set<std::string> formasDePagamento;
+    static set<string> formasDePagamento;
     Data data;
-    //map<Produto, float> valorTotal;
 
-    map<Produto, pair<int, float>> produtos; //Produto / quantidade / valor total
+    map< reference_wrapper<Produto>, pair<int, float>> produtos; //Produto / quantidade / valor total
 
     public:
-    Orcamento(Cliente c, map<Produto, int> prod, Data d);
+    Orcamento(Cliente c, map< reference_wrapper<Produto>, int> prod, Data d);
+    map< reference_wrapper<Produto>, pair<int, float>> getProdutos() const;
     bool AdicionarFormaDePagamento(string str);
     bool RemoverFormaDePagamento(string str);
-    //bool Atualizar(); //1: Orçamento já está atualizado | 0: Orçamento foi atualizado
-    bool EfetivarVenda(Data d, std::string forma_pag);
+    bool Atualizar(); //1: Orçamento já está atualizado | 0: Orçamento foi atualizado
+    bool EfetivarVenda(Data d, string forma_pag);
     Data getData();
-
     void imprimeOrcamento();
 
 

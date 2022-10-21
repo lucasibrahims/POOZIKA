@@ -41,7 +41,7 @@
     return *this;
   }
 
-  bool Produto::operator<(const Produto& segundo) const {
+  bool Produto::operator<(const reference_wrapper<Produto> segundo) const {
     return 1;
   }
 

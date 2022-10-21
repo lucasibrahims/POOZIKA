@@ -7,6 +7,7 @@
 
 using namespace std;
 
+
 int main() {
 
     vector<float> v1(1, 32.20);
@@ -45,11 +46,12 @@ int main() {
     // Estoque Estoque2(LotesAtuais2);
     // Estoque Estoque3(LotesAtuais3);
 
-    // Estoque1.imprimeEstoque();
+    // Estoque1.imprimeEstoque();c++
     // Estoque2.imprimeEstoque();
     // Estoque3.imprimeEstoque();
 
-    map<Produto, int> prod;
+
+    map< reference_wrapper<Produto>, int> prod;
     prod[QueijoMinas] = 10;
     prod[Ketchup] = 10;
     prod[FitaCrepe] = 1;
@@ -58,4 +60,14 @@ int main() {
 
     Orcamento o(c, prod, d1);
     o.imprimeOrcamento();
+
+    QueijoMinas.SetValor(40.0);
+    FitaCrepe.SetValor(100.0);
+    
+    map< reference_wrapper<Produto>, pair<int, float>>::iterator it = o.getProdutos().begin();
+    cout << it->first.get().getValor();
+
+    if( !o.Atualizar() ) cout << "Orcamento desatualizado foi corrigido" << endl;
+    o.imprimeOrcamento();
+
 };

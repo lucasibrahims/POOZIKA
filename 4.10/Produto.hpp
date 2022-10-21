@@ -33,7 +33,7 @@ class Produto {
   int getEstoque_min() const;
 
   Produto& operator=(Produto& segundo);
-  bool operator<(const Produto& segundo) const; //Para corrigir um bug de map<>
+  bool operator<(const reference_wrapper<Produto> segundo) const; //Para corrigir um bug de map<>
   //inline bool operator==(Produto& dir);
   bool imprimeProduto();
   
