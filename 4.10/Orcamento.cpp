@@ -8,16 +8,15 @@ set<std::string> Orcamento::formasDePagamento(p, p+10);
 
 Orcamento::Orcamento(Cliente c, map<Produto, int> prod, Data d) {
     cliente = c; //Conferir se o cliente ja foi cadastrado
-    produtos = prod;
-    data = d;
 
-    //Calculando o orcamento
-    for(map<Produto,int>::iterator it = produtos.begin(); it != produtos.end(); it++) {
-        float valorUnit = it->first.getValor();
-        int quantidade = it->second;
+    for(map<Produto, int>::iterator it = prod.begin(); it != prod.end(); it++) {
+        
+        pair<int, float> QntPreco(it->second, it->second * it->first.getValor());
+        produtos[it->first] = QntPreco;
 
-        valorTotal[it->first] = valorUnit * quantidade;
     }
+
+    data = d;
 
 }
 
@@ -38,19 +37,39 @@ bool Orcamento::RemoverFormaDePagamento(string str) {
     return 0;
 
 }
-    // bool EfetivarVenda(Data d, std::string forma_pag);
+
+// bool Orcamento::Atualizar() {
+//     map<Produto, int>::iterator tra
+
+//     //Confere se os preços regitrados com os atuais
+//     for(map<Produto, float>::iterator it = valorTotal.begin(); it != valorTotal.end(); it++) {
+//         float old_valorU = it->second / 
+
+//     }
+
+// }
+
+bool Orcamento::EfetivarVenda(Data d, std::string forma_pag) {
+    //Conferir se o método de pagamento é válido
+    if( formasDePagamento.find(forma_pag) == formasDePagamento.end()) return 1;
+
+    //Conferir a validade dos preços do orçamento
+
+
+}
 
 Data Orcamento::getData() {
     return data;
 }
 
 void Orcamento::imprimeOrcamento() {
-    map<Produto, float>::const_iterator it = valorTotal.begin();
+    map<Produto, pair<int, float>>::iterator it = produtos.begin();
 
     cout << "---- Orcamento de " << it->first.getNome() << " ----" << endl;
     cout << "Valores vigentes no dia " << data.getData() << endl;
 
-    for(;it != valorTotal.end(); it++) {
-        cout << it->first.getNome() << ": R$" << it->second << endl;
+    for(;it != produtos.end(); it++) {
+        cout << it->first.getNome() << ": " << it->second.first << " unidade(s) por R$" << it->second.second << endl;
+
     }
 }
