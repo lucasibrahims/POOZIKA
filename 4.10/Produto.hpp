@@ -25,14 +25,15 @@ class Produto {
   bool SetCategoria(string s);
   bool SetLote_min(int i);
   bool SetEstoque_min(int i);
-  string getNome();
-  string getCodigo();
-  float getValor();
-  string getCategoria();
-  int getLote_min();
-  int getEstoque_min();
+  string getNome() const;
+  string getCodigo() const;
+  float getValor() const;
+  string getCategoria() const;
+  int getLote_min() const;
+  int getEstoque_min() const;
 
   Produto& operator=(Produto& segundo);
+  bool operator<(const Produto& segundo) const; //Para corrigir um bug de map<>
   //inline bool operator==(Produto& dir);
   bool imprimeProduto();
   

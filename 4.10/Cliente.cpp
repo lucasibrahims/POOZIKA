@@ -1,6 +1,10 @@
 #include "Cliente.hpp"
 #include <string>
 
-Cliente::Cliente(string new_tipo){
-  this->tipo = new_tipo;
+Cliente::Cliente(bool cliente_fisico){
+  clienteFisico = cliente_fisico;
+}
+
+Cliente::Cliente() {
+  clienteFisico = 0;
 }

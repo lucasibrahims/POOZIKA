@@ -41,6 +41,10 @@
     return *this;
   }
 
+  bool Produto::operator<(const Produto& segundo) const {
+    return 1;
+  }
+
    // inline bool operator==(Produto& dir) {
   //   if(codigo == dir.getCodigo()) return true;
 
@@ -75,23 +79,23 @@
     return 1;
   }
 
-  string Produto::getNome() {
+  string Produto::getNome() const {
     return nome;
   }
-  string Produto::getCodigo() {
+  string Produto::getCodigo() const {
     return codigo;
   }
-  float Produto::getValor() {
+  float Produto::getValor() const {
     return valores.back();
   }
-  string Produto::getCategoria() {
+  string Produto::getCategoria() const {
     return categoria;
   }
-  int Produto::getLote_min() {
+  int Produto::getLote_min() const {
     return lote_min;
   }
   
-  int Produto::getEstoque_min() {
+  int Produto::getEstoque_min() const {
     return estoque_min;
   }
  

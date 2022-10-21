@@ -9,12 +9,13 @@ using namespace std;
 class Cliente : public Pessoa{
   private:
 
-  string tipo;
+  bool clienteFisico;
   //vector<Venda> Compras;
 
   public:
 
-  Cliente(string new_tipo);
+  Cliente(bool cliente_fisico);
+  Cliente();
   string ExportarAtributos();
 
 };

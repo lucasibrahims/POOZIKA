@@ -3,7 +3,7 @@
 #include <string>
 
 #include "Funcionarios.hpp"
-#include "ClienteJuridico.hpp"
+#include "Cliente.hpp"
 #include "Empresa.hpp"
 #include <string>
 
