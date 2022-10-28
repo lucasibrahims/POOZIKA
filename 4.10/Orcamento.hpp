@@ -15,11 +15,11 @@ class Orcamento {
     static set<string> formasDePagamento;
     Data data;
 
-    map< reference_wrapper<Produto>, pair<int, float>> produtos; //Produto / quantidade / valor total
+    map< Produto*, pair<int, float>> produtos; //Produto / quantidade / valor total
 
     public:
-    Orcamento(Cliente c, map< reference_wrapper<Produto>, int> prod, Data d);
-    map< reference_wrapper<Produto>, pair<int, float>> getProdutos() const;
+    Orcamento(Cliente c, map< Produto*, int> prod, Data d);
+    map< Produto*, pair<int, float>> getProdutos() const;
     bool AdicionarFormaDePagamento(string str);
     bool RemoverFormaDePagamento(string str);
     bool Atualizar(); //1: Orçamento já está atualizado | 0: Orçamento foi atualizado

@@ -10,13 +10,16 @@ class Cliente : public Pessoa{
   private:
 
   bool clienteFisico;
-  //vector<Venda> Compras;
+  vector<Venda> Compras;
 
   public:
 
   Cliente(bool cliente_fisico);
   Cliente();
   string ExportarAtributos();
+  bool SetCompras(vector<Venda> compras);
+  bool SetCompras(Venda compra);
+  vector<Venda> getCompras() const;
 
 };
 
