@@ -29,7 +29,7 @@ class Lote{
   void setQntMin(int _qntMin);
   void setQntAtual(int _qntAtual);
 
-  Lote& operator=(Lote& segundo);
+  Lote operator=(Lote segundo);
   void imprimeLote();
 };
 

@@ -1,10 +1,11 @@
 #include <iostream>
-#include "Orcamento.hpp"
+//#include "Orcamento.hpp"
 #include <map>
-// #include "Produto.hpp"
-// #include "Lote.hpp"
-// #include "Estoque.hpp"
-
+#include "Produto.hpp"
+#include "Lote.hpp"
+#include "Estoque.hpp"
+#include "Venda.hpp"
+#include "Data.hpp"
 using namespace std;
 
 
@@ -22,36 +23,29 @@ int main() {
     Produto Ketchup("Ketchup", "BGGFD32", v2, "Alimentos", 100, 50);
     Produto FitaCrepe("Fita Crepe", "99UIUDF3", v1, "Utilidades", 1000, 100);
 
-    // //Criando lotes para cada
-    // Lote Lote11(d1, "3030", QueijoMinas.getLote_min(), 500, QueijoMinas);
-    // Lote Lote12(d2, "3131", QueijoMinas.getLote_min(), 500, QueijoMinas);
-    //     vector<Lote> LotesAtuais1;
-    //     LotesAtuais1.push_back(Lote11);
-    //     LotesAtuais1.push_back(Lote12);
 
-    // Lote Lote21(d2, "4141", Ketchup.getLote_min(), 300, Ketchup);
-    // Lote Lote22(d2, "4242", Ketchup.getLote_min(), 300, Ketchup);
-    // Lote Lote23(d3, "3043", Ketchup.getLote_min(), 300, Ketchup);
-    //     vector<Lote> LotesAtuais2;
-    //     LotesAtuais2.push_back(Lote21);
-    //     LotesAtuais2.push_back(Lote22);
-    //     LotesAtuais2.push_back(Lote23);
+    Lote Lote21(d2, "4141", Ketchup.getLote_min(), 300, Ketchup);
+    Lote Lote22(d2, "4242", Ketchup.getLote_min(), 300, Ketchup);
+    Lote Lote23(d3, "3043", Ketchup.getLote_min(), 300, Ketchup);
+         vector<Lote> LotesAtuais2;
+         LotesAtuais2.push_back(Lote21);
+         LotesAtuais2.push_back(Lote22);
+         LotesAtuais2.push_back(Lote23);
 
-    // Lote Lote31(d3, "5050", FitaCrepe.getLote_min(), 3000, FitaCrepe);
-    //     vector<Lote> LotesAtuais3;
-    //     LotesAtuais3.push_back(Lote31);
+     Lote Lote31(d3, "5050", FitaCrepe.getLote_min(), 3000, FitaCrepe);
+         vector<Lote> LotesAtuais3;
+        LotesAtuais3.push_back(Lote31);
 
-    // //Criando cada estoque
-    // Estoque Estoque1(LotesAtuais1);
-    // Estoque Estoque2(LotesAtuais2);
-    // Estoque Estoque3(LotesAtuais3);
+    //Criando cada estoque
+     Estoque Estoque2(LotesAtuais2);
+     Estoque Estoque3(LotesAtuais3);
 
     // Estoque1.imprimeEstoque();c++
     // Estoque2.imprimeEstoque();
     // Estoque3.imprimeEstoque();
 
 
-    map< reference_wrapper<Produto>, int> prod;
+   /* map< reference_wrapper<Produto>, int> prod;
     prod[QueijoMinas] = 10;
     prod[Ketchup] = 10;
     prod[FitaCrepe] = 1;
@@ -68,6 +62,9 @@ int main() {
     cout << it->first.get().getValor();
 
     if( !o.Atualizar() ) cout << "Orcamento desatualizado foi corrigido" << endl;
-    o.imprimeOrcamento();
-
+    o.imprimeOrcamento();*/
+//(Data data, Produto *prod, int qnt, vector<Lote> LotesComprados, Estoque estoque)
+    Venda queijo(d2, &QueijoMinas,300, LotesAtuais2, Estoque2);
+    cout << queijo.ValidaQuantidade(200) << endl;
+    queijo.AtualizaEstoque();
 };

@@ -2,9 +2,8 @@
 #include <iostream>
 
 Lote::Lote(){
-  //Criar construtor;
+  //criar construtor 
 }
-
 Lote::Lote (Data data_, string identificador_, int QntMin_, int QntAtual_, Produto produto_) {
 
   //Conferindo se o lote produz a quantidade suficiente
@@ -49,7 +48,7 @@ void Lote::setQntAtual(int _qntAtual)
   this->QntAtual = _qntAtual;
 }
 
-Lote& Lote::operator=(Lote& segundo) {
+Lote Lote::operator=(Lote segundo) {
 
   data = segundo.getData();
   identificador = segundo.getId();

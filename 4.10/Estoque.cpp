@@ -94,11 +94,11 @@ void Estoque::imprimeEstoque() {
   float Estoque::getQntMP(MateriaPrima* MP) {
     return MPQnt[MP];
   }
-
+/*
   bool Estoque::AtualizaMP() {
-    for(map<MateriaPrima*, floar>)
+    //for(map<MateriaPrima*, float>)
   }
 
-// bool Estoque::AtualizaMP() {
+ bool Estoque::AtualizaMP() {
 
-// }
+}*/
