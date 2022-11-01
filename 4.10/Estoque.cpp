@@ -78,3 +78,27 @@ void Estoque::imprimeEstoque() {
   
 
 }
+
+      // Metodos de Materia Prima
+
+  bool Estoque::AdicionaMP(MateriaPrima* MP, float qnt_por_prod) {
+    MPQnt[MP] = qnt_por_prod;
+    return 0;
+  }
+
+  bool Estoque::RemoveMP(MateriaPrima* MP) {
+    MPQnt.erase(MP);
+    return 0;
+  }
+
+  float Estoque::getQntMP(MateriaPrima* MP) {
+    return MPQnt[MP];
+  }
+
+  bool Estoque::AtualizaMP() {
+    for(map<MateriaPrima*, floar>)
+  }
+
+// bool Estoque::AtualizaMP() {
+
+// }

@@ -16,7 +16,7 @@ class Venda {
 
   public:
   Venda(Data data, Produto prod, int qnt, vector<Lote> LotesComprados, Estoque estoque); //Constructor
-  bool ValidaQuantidade (int qnt);
+  bool ValidaQuantidade (int qnt, Produto prod);
   void AtualizaEstoque();
   void ImprimeOrdem();
 
