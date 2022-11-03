@@ -2,8 +2,7 @@
 #define  EMPRESA_HPP
 
 #include <vector>
-#include "ClienteJuridico.hpp"
-#include "ClienteFisico.hpp"
+#include "Cliente.hpp"
 #include "Validacao.hpp"
 
 using namespace std;
@@ -13,28 +12,28 @@ class Empresa{
     string nome;
     string Cnpj;
     //vector<Departamento> Departamentos;
-    vector<ClienteFisico> clientesFisicos;
-    vector<ClienteJuridico> clientesJuridicos;
-    static Empresa* EmpresaPtr;
+    vector<Cliente> clientesFisicos;
+    vector<Cliente> clientesJuridicos;
+    static Empresa *EmpresaPtr;
     Empresa(string nome, string Cnpj);
     Empresa();
     
 
 
   public:
-    static Empresa* Instance();
-    Empresa* EmpresaPtr();
+    char getch();
+    static Empresa *Instance();
     bool setNome(string);
     bool setCnpj(string);
     //bool setDepartamentos(Departamento Departamentos);
-    bool setClienteFisico(ClienteFisico ClientesFisicos);
-    bool setClienteJuridico(ClienteJuridico ClientesJuridicos);
+    bool setClienteFisico(Cliente ClientesFisicos);
+    bool setClienteJuridico(Cliente ClientesJuridicos);
     bool dissidioColetivo(float taxa);
     string getNome();    
     string getCnpj();
     //Departamento& getDepartamentos(size_t indice);
-    ClienteFisico& getclientesFisicos(size_t indice);
-    ClienteJuridico& getclientesJuridicos(size_t indice);
+    Cliente& getclientesFisicos(size_t indice);
+    Cliente& getclientesJuridicos(size_t indice);
     
   
 

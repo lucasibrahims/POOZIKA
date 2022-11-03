@@ -10,15 +10,16 @@ Empresa::Empresa(string new_nome, string new_cnpj){
   this->Cnpj = new_cnpj;
 }
 
-Empresa::Empresa() {
-  nome = "Empresa";
-  Cnpj = "";
-}
+//Empresa::Empresa() {
+ // nome = "Empresa";
+  //Cnpj = "";
+//}
+Empresa *Empresa::EmpresaPtr = 0;
 
 Empresa *Empresa::Instance () {
-  if (EmpresaPtr == 0) // if pointer is null...
-    EmpresaPtr = new Empresa; // ... create instance
-  return(EmpresaPtr);
+if (EmpresaPtr == 0) // if pointer is null...
+EmpresaPtr = new Empresa; // ... create instance
+return(EmpresaPtr);
 }
 
 bool ValidacaoCNPJ::linhaValida(const std::string &novoCnpj) const {
@@ -58,12 +59,12 @@ bool Empresa::setCnpj(string novoCnpj) {
 //   return 1;
 // }
 
-bool Empresa::setClienteFisico(ClienteFisico novosClientesFisicos) {
+bool Empresa::setClienteFisico(Cliente novosClientesFisicos) {
   this->clientesFisicos.push_back(novosClientesFisicos);
   return 1;
 }
 
-bool Empresa::setClienteJuridico(ClienteJuridico novosClientesJuridicos) {
+bool Empresa::setClienteJuridico(Cliente novosClientesJuridicos) {
   this->clientesJuridicos.push_back(novosClientesJuridicos);
   return 1;
 }
@@ -76,18 +77,11 @@ string Empresa::getCnpj() { return Cnpj; }
 //   return this->Departamentos.at(indice);
 // }
 
-ClienteFisico &Empresa::getclientesFisicos(size_t indice) {
+Cliente &Empresa::getclientesFisicos(size_t indice) {
   return this->clientesFisicos.at(indice);
 }
 
-ClienteJuridico &Empresa::getclientesJuridicos(size_t indice) {
+Cliente &Empresa::getclientesJuridicos(size_t indice) {
   return this->clientesJuridicos.at(indice);
 }
 
-Empresa* Empresa::EmpresaPtr(){
-  if (EmpresaPtr == 0){
-      EmpresaPtr = new Empresa;
-    return (EmpresaPtr);
-  }
-  
-}
