@@ -85,3 +85,21 @@ Cliente &Empresa::getclientesJuridicos(size_t indice) {
   return this->clientesJuridicos.at(indice);
 }
 
+bool Empresa::SetEndereco(string end) {
+  endereco = end;
+  return 0;
+}
+
+string Empresa::getEndereco() {
+  return endereco;
+}
+
+bool Empresa::SetCoordenadas(float x, float y) {
+  pair<float,float> p(x, y);
+  coordenadas = p;
+  return 0;
+}
+
+pair<float,float> Empresa::getCoordenadas() {
+  return coordenadas;
+}

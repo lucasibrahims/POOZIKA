@@ -15,7 +15,8 @@ private:
   std::string matricula;
   Data DataNascimento;
   vector <Data> Historico;
-  map <std::string,Data> Salario;
+  map <string, Data> Salario;
+  Data horario_onibus;
   bool ativo;
 
 public:
@@ -26,10 +27,15 @@ public:
   std::string getMatrícula();
   Data getDataNascimento();
   float getSalario();
+  bool SetHorarioOnibus(Data d);
+  Data getHorarioOnibus();
   float getHistórico();
   bool Admitir(Data dataAdmissao);
   bool Demitir(Data dataDemissao);
   bool Promover(Data dataPromocao);
+
+  Funcionarios(string nome_, string cpf_, string matricula_, float coord_x=0, float coord_y=0);
+
 };
 
 #endif  // FUNCIONARIOS_HPP

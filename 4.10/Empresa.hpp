@@ -11,7 +11,9 @@ class Empresa{
   private:
     string nome;
     string Cnpj;
-    //vector<Departamento> Departamentos;
+    string endereco;
+    pair<float, float> coordenadas;
+    // vector<Departamento> Departamentos;
     vector<Cliente> clientesFisicos;
     vector<Cliente> clientesJuridicos;
     static Empresa *EmpresaPtr;
@@ -25,6 +27,10 @@ class Empresa{
     static Empresa *Instance();
     bool setNome(string);
     bool setCnpj(string);
+    bool SetEndereco(string s);
+    string getEndereco();
+    bool SetCoordenadas(float x, float y);
+    pair<float,float> getCoordenadas();
     //bool setDepartamentos(Departamento Departamentos);
     bool setClienteFisico(Cliente ClientesFisicos);
     bool setClienteJuridico(Cliente ClientesJuridicos);

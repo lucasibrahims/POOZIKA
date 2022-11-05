@@ -30,6 +30,22 @@
     return 1; 
   }
 
-  bool Promover(Data dataPromocao){
+  bool Funcionarios::Promover(Data dataPromocao){
     return 1;
+  }
+
+  bool Funcionarios::SetHorarioOnibus(Data d) {
+    horario_onibus = d;
+    return 0;
+  }
+
+  Data Funcionarios::getHorarioOnibus() {
+    return horario_onibus;
+  }
+
+  Funcionarios::Funcionarios(string nome_, string cpf_, string matricula_, float coord_x, float coord_y) {
+    SetNome(nome_);
+    SetCpf(cpf_);
+    matricula = matricula_;
+    SetCoordenadas(coord_x, coord_y);
   }

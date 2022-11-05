@@ -13,14 +13,8 @@ class Proposta {
     Proposta(float _oferta_unit);
     Proposta(int qnt, float valor_total);
 
-    bool operator==(Proposta &p) {
-        if(efetivada == p.getEfetivada()) {
-            if(oferta_unit == p.getOfertaUnit()) return true;
-        }
+    bool operator==(Proposta &p);
 
-        return false;
-    }
 };
-
 
 #endif

@@ -53,6 +53,12 @@ bool Pessoa::SetEndereco(string new_endereco) {
   return 1;
 }
 
+bool Pessoa::SetCoordenadas(float x, float y) {
+  pair<float, float> c(x, y);
+  coordenadas = c;
+  return 0;
+}
+
 bool Pessoa::SetEmail(string new_email) {
   if (validarEmail(new_email)) {
     this->email = new_email;
@@ -74,6 +80,8 @@ string Pessoa::getNome() { return nome; }
 string Pessoa::getCpf() { return cpf; }
 
 string Pessoa::getEndereco() { return endereco; }
+
+pair<float, float> Pessoa::getCoordenadas() { return coordenadas; }
 
 string Pessoa::getEmail() { return email; }
 

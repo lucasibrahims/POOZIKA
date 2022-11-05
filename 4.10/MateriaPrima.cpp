@@ -49,10 +49,16 @@ set<std::string> MateriaPrima::unid_cadastradas(p, p+4);
 
     bool MateriaPrima::AtualizaQnt(float qnt) { //Quando um produto for criado
         quantidade -= qnt;
+        if(quantidade < estoque_min) gerarOrdem();
         return 0;
     }
 
-    // bool gerarOrdem();
+    bool MateriaPrima::gerarOrdem() {
+        quantidade += estoque_min;
+        return 0;
+    }
+
+
     bool MateriaPrima::validaUnidade(string unid_medida) {
         if( unid_cadastradas.find(unid_medida) == unid_cadastradas.end()) return false;
         return true;

@@ -26,3 +26,11 @@
         efetivada = 0;
         oferta_unit = valor_total/qnt;
     }
+
+    bool Proposta::operator==(Proposta &p) {
+        if(efetivada == p.getEfetivada()) {
+            if(oferta_unit == p.getOfertaUnit()) return true;
+        }
+
+        return false;
+    }
