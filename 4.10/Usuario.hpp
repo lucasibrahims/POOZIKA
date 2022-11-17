@@ -12,6 +12,7 @@ class Usuario {
   Usuario(); //Construtor privado
 
   public:
+  char getch();
   static Usuario *instanciaUsuario();
   
 };

@@ -2,7 +2,11 @@
 #include <iostream> 
 #include <string>
 #include "Empresa.hpp"
+#include <fstream>
 
+// include headers that implement a archive in simple text format
+// #include <boost/archive/text_oarchive.hpp>
+// #include <boost/archive/text_iarchive.hpp>
 
 bool Cargo::SetNome(string _nome){
   if(nome == _nome)
@@ -15,7 +19,7 @@ bool Cargo::SetFuncionarios(Funcionarios _funcionario){
   }
 vector<Funcionarios> Cargo::getFuncionarios()
 {
-  return this->funcionarios;
+   return this->funcionarios;
 }
 
 string Cargo::getNome(){
