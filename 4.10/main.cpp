@@ -1,11 +1,12 @@
 #include <iostream>
-//#include "Orcamento.hpp"
+#include "Orcamento.hpp"
 #include <map>
 #include "Produto.hpp"
 #include "Lote.hpp"
 #include "Estoque.hpp"
 #include "Venda.hpp"
 #include "Data.hpp"
+#include "Cliente.hpp"
 using namespace std;
 
 
@@ -40,15 +41,18 @@ int main() {
      Estoque Estoque2(LotesAtuais2);
      Estoque Estoque3(LotesAtuais3);
 
-    // Estoque1.imprimeEstoque();c++
-    // Estoque2.imprimeEstoque();
-    // Estoque3.imprimeEstoque();
+    Estoque2.imprimeEstoque();
+    Estoque3.imprimeEstoque();
 
 
-   /* map< reference_wrapper<Produto>, int> prod;
-    prod[QueijoMinas] = 10;
-    prod[Ketchup] = 10;
-    prod[FitaCrepe] = 1;
+    map<Produto*, pair<int, float>> prod;
+    pair<int, float> p(10, QueijoMinas.getValor()*10);
+    pair<int, float> q(30, Ketchup.getValor()*30);
+    pair<int, float> r(25, FitaCrepe.getValor()*25);
+
+    prod[&QueijoMinas] = p;
+    prod[&Ketchup] = q;
+    prod[&FitaCrepe] = r;
     
     Cliente c;
 
@@ -62,9 +66,9 @@ int main() {
     cout << it->first.get().getValor();
 
     if( !o.Atualizar() ) cout << "Orcamento desatualizado foi corrigido" << endl;
-    o.imprimeOrcamento();*/
+    o.imprimeOrcamento();
 //(Data data, Produto *prod, int qnt, vector<Lote> LotesComprados, Estoque estoque)
-    Venda queijo(d2, &QueijoMinas,300, LotesAtuais2, Estoque2);
-    cout << queijo.ValidaQuantidade(200) << endl;
-    queijo.AtualizaEstoque();
+    // Venda queijo(d2, &QueijoMinas,300, LotesAtuais2, Estoque2);
+    // cout << queijo.ValidaQuantidade(200) << endl;
+    // queijo.AtualizaEstoque();
 };

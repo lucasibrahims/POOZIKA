@@ -1,0 +1,51 @@
+#include "Funcionarios.hpp"
+
+#include <ostream>
+#include <string>
+#include "Data.hpp"
+#include <vector>
+
+  bool Funcionarios::setMatricula(string Matricula) {
+    matricula=Matricula;
+    return 1;
+  }  
+
+  bool Funcionarios::setDataNascimento(Data dataNascimento){
+    DataNascimento = dataNascimento;
+    return 1;
+  }
+
+  bool Funcionarios::setSalario(float salario, Data aumentoSalarioData){
+    return 1;
+  }
+
+  bool Funcionarios::Admitir(Data dataAdmissao){
+    this->Historico.push_back(dataAdmissao);
+    return 1;
+  }
+
+  bool Funcionarios::Demitir(Data dataDemissao){
+
+    this->Historico.push_back(dataDemissao);
+    return 1; 
+  }
+
+  bool Funcionarios::Promover(Data dataPromocao){
+    return 1;
+  }
+
+  bool Funcionarios::SetHorarioOnibus(Data d) {
+    horario_onibus = d;
+    return 0;
+  }
+
+  Data Funcionarios::getHorarioOnibus() {
+    return horario_onibus;
+  }
+
+  Funcionarios::Funcionarios(string nome_, string cpf_, string matricula_, float coord_x, float coord_y) {
+    SetNome(nome_);
+    SetCpf(cpf_);
+    matricula = matricula_;
+    SetCoordenadas(coord_x, coord_y);
+  }
