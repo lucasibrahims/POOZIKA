@@ -3,6 +3,8 @@
 #include <string>
 #include <vector>
 #include <iostream>
+#include "MateriaPrima.hpp"
+
 
   using namespace std;
 
@@ -112,6 +114,16 @@
 
     return 0;
   }
+
+  bool Produto::SetMateriaPrima(MateriaPrima novaMateriaPrima) {
+  this->materiasPrimas.push_back(novaMateriaPrima);
+  return 1;
+  }
+
+  vector<MateriaPrima> Produto::getMateriasPrimas() {
+    return materiasPrimas;
+  }
+
 
 
  

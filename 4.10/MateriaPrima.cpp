@@ -1,7 +1,18 @@
 #include "MateriaPrima.hpp"
 
-    string p[] = {"Kg", "m3", "m2", "m"};
-set<std::string> MateriaPrima::unid_cadastradas(p, p+4);
+MateriaPrima::MateriaPrima(){
+
+}
+
+MateriaPrima::MateriaPrima(string nome_, float quantidade_, float estoqueMin, string uniMed_){
+    this->nome = nome_;
+    this->quantidade = quantidade_;
+    this->estoque_min = estoqueMin;
+    this->unid_medida = uniMed_;
+}
+
+    string p[] = {"Kg", "m3", "m2", "m", "unidades"};
+set<std::string> MateriaPrima::unid_cadastradas(p, p+5);
 
     bool MateriaPrima::SetNome(string n) {
         nome = n;
@@ -13,6 +24,10 @@ set<std::string> MateriaPrima::unid_cadastradas(p, p+4);
 
     vector<Fornecedor> MateriaPrima::getFornecedores() {
         return fornecedores;
+    }
+    bool MateriaPrima::SetUnidMed(string unidMed){
+        this->unid_medida = unidMed;
+        return 0;
     }
 
     bool MateriaPrima::InsertFornecedor(Fornecedor f) {
@@ -63,3 +78,4 @@ set<std::string> MateriaPrima::unid_cadastradas(p, p+4);
         if( unid_cadastradas.find(unid_medida) == unid_cadastradas.end()) return false;
         return true;
     }
+

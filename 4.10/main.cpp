@@ -6,10 +6,26 @@
 #include "Estoque.hpp"
 #include "Venda.hpp"
 #include "Data.hpp"
+#include "Funcionarios.hpp"
+#include "Pessoa.hpp"
+#include "MateriaPrima.hpp"
+
 using namespace std;
 
 
 int main() {
+// 1- Instanciar um objeto da classe Empresa. 
+// 2-Instanciar um objeto de um usuário logado que deverá ter permissão de acesso à todas as funcionalidades, exceto ao método que realiza a exclusão de um funcionário.
+// 3-Comprovar o funcionamento do singleton do usuário logado. 
+// ok 4-Cadastrar três funcionários. 
+// 5-Cadastrar dois clientes, sendo um PF e outro PJ. 
+// ok 6-Cadastrar o produto Mesa (estoque mínimo: 20 unidades), que, para sua produção, necessita das matérias-primas e quantidades abaixo, que também devem ser cadastradas. ▪ Madeira: 450g (estoque mínimo: 1 Kg) ▪ Plástico: 150g (estoque mínimo: 1 Kg) ▪ Alumínio: 100g (estoque mínimo: 1 Kg) ▪ Parafusos: 8 unidades (estoque mínimo: 20 unidades)
+// 7-Devem ser produzidos lotes de mesa para atender o estoque mínimo 
+// 8-Tentar excluir um funcionário cadastrado no sistema
+// 9-O cliente PJ deve solicitar um orçamento para aquisição de 10 mesas. Em função da previsão de falta de matéria-prima, após a geração desse orçamento, o preço da mesa deve sofrer um aumento de 5%. Em seguida o cliente decide adquirir as 10 mesas, mesmo após o aumento.
+// 10-Deve ser cadastrada a rota de um veículo para transporte dos três funcionários cadastrados trabalharem no turno da manhã que se inicia às 8h. Devem ver exibidos os horários em que cada funcionário deverá embarcar.
+// 11-Por fim, deve-se exibir os logs de todas as operações realizadas.
+
 
     vector<float> v1(1, 32.20);
     vector<float> v2(1, 5.0);
@@ -40,7 +56,7 @@ int main() {
      Estoque Estoque2(LotesAtuais2);
      Estoque Estoque3(LotesAtuais3);
 
-    // Estoque1.imprimeEstoque();c++
+    // Estoque1.imprimeEstoque();
     // Estoque2.imprimeEstoque();
     // Estoque3.imprimeEstoque();
 
@@ -64,7 +80,71 @@ int main() {
     if( !o.Atualizar() ) cout << "Orcamento desatualizado foi corrigido" << endl;
     o.imprimeOrcamento();*/
 //(Data data, Produto *prod, int qnt, vector<Lote> LotesComprados, Estoque estoque)
-    Venda queijo(d2, &QueijoMinas,300, LotesAtuais2, Estoque2);
-    cout << queijo.ValidaQuantidade(200) << endl;
-    queijo.AtualizaEstoque();
+    // Venda queijo(d2, &QueijoMinas,300, LotesAtuais2, Estoque2);
+    // cout << queijo.ValidaQuantidade(200) << endl;
+    // queijo.AtualizaEstoque();
+    //◦Instanciar um objeto da classe Empresa.
+//Empresa empresa("amazon", "12345678910");
+
+//◦Cadastrar três funcionários.
+
+Funcionarios funcionario1("João", "074.581.325-10", "20221233", 12.5, 10.1);
+Funcionarios funcionario2("Maria", "074.581.325-20", "20221234", 12.1, 10.2);
+Funcionarios funcionario3("José", "074.581.325-30", "20221235", 12.0, 10.9);
+cout << funcionario1.getCpf() << endl;
+cout << funcionario1.getCpf() << endl;
+cout << funcionario1.getCpf() << endl;
+
+// 6-Cadastrar o produto Mesa (estoque mínimo: 20 unidades), que, para sua produção, necessita das matérias-primas e quantidades abaixo, 
+//que também devem ser cadastradas.
+// ▪ Madeira: 450g (estoque mínimo: 1 Kg) ▪ Plástico: 150g (estoque mínimo: 1 Kg) ▪ Alumínio: 100g (estoque mínimo: 1 Kg) 
+//▪ Parafusos: 8 unidades (estoque mínimo: 20 unidades)
+//(para compilar) c++ main.cpp Venda.cpp Produto.cpp Lote.cpp Data.cpp Estoque.cpp Formato.cpp Funcionarios.cpp Pessoa.cpp MateriaPrima.cpp -o main
+//(para rodar) ./main
+
+MateriaPrima *madeira = new MateriaPrima;
+madeira->SetNome("Madeira");
+madeira->SetQuantidade(0.450);
+madeira->SetEstoqueMin(1);
+cout<<madeira->getNome()<<endl;
+cout<<madeira->getQuantidade()<<endl;
+cout<<madeira->getUnidMed()<<endl;
+cout<<madeira->getEstoqueMin()<<endl;
+
+MateriaPrima plastico("Plastico",0.150, 1,"kg");
+cout <<plastico.getNome()<<endl;
+cout <<plastico.getQuantidade()<<endl;
+cout <<plastico.getEstoqueMin()<<endl;
+cout <<plastico.getUnidMed()<<endl;
+
+MateriaPrima alumínio("Alumínio",0.100, 1,"kg");
+MateriaPrima *parafuso = new MateriaPrima;
+parafuso->SetNome("Parafuso");
+parafuso->SetQuantidade(8);
+parafuso->SetUnidMed("unidades");
+parafuso->SetEstoqueMin(20);
+
+
+Produto *mesa = new Produto;
+mesa->SetNome("Mesa");
+mesa->SetEstoque_min(20);
+mesa->SetMateriaPrima(*madeira);
+mesa->SetMateriaPrima(plastico);
+mesa->SetMateriaPrima(alumínio);
+mesa->SetMateriaPrima(*parafuso);
+
+      
+     //Declaring iterator to a vector
+    // vector<MateriaPrima>::iterator ptr;
+      
+    // // Displaying vector elements using begin() and end()
+    // cout << "The vector elements are : ";
+    // for (ptr = mesa->getMateriasPrimas().begin(); ptr < mesa->getMateriasPrimas().end(); ptr++)
+    //     cout << ptr->getNome() << " ";
+      
+ 
+
+
+
+
 };

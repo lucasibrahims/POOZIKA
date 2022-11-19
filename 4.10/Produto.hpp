@@ -3,6 +3,7 @@
 
 #include <string>
 #include <vector>
+#include "MateriaPrima.hpp"
 
 using namespace std;
 
@@ -13,6 +14,7 @@ class Produto {
   string categoria;
   int lote_min;
   int estoque_min;
+  vector<MateriaPrima> materiasPrimas;
 
     public:
   Produto(string nome, string codigo, vector<float> valores, string categoria, 
@@ -31,7 +33,8 @@ class Produto {
   string getCategoria() const;
   int getLote_min() const;
   int getEstoque_min() const;
-
+  vector<MateriaPrima>getMateriasPrimas();
+  bool SetMateriaPrima(MateriaPrima novaMateriaPrima);
   Produto& operator=(Produto& segundo);
   bool operator<(const reference_wrapper<Produto> segundo) const; //Para corrigir um bug de map<>
   //inline bool operator==(Produto& dir);

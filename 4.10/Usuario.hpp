@@ -5,7 +5,7 @@ using namespace std;
 
 class Usuario {
 
-  string LogicCpf;
+  string LoginCpf;
   string LoginSenha;
   map<string,bool> Permissoes;
   static Usuario *UsuarioPtr;

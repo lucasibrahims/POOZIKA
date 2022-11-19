@@ -8,3 +8,5 @@ Usuario *Usuario::instanciaUsuario() {
   return UsuarioPtr;
 }
 
+
+
