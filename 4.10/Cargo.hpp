@@ -5,6 +5,8 @@
 #include "Funcionarios.hpp"
 #include "Cliente.hpp"
 #include "Empresa.hpp"
+#include "Data.hpp"
+
 #include <string>
 
 using namespace std;
@@ -14,8 +16,9 @@ class Cargo{
   string nome;
   vector<Funcionarios> funcionarios;
 
-  public:
 
+  public:
+  Cargo();
   Cargo(string nome);
   bool SetNome(string _nome);
   bool SetFuncionarios(Funcionarios _funcionario);

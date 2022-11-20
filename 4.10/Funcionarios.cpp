@@ -4,6 +4,8 @@
 #include <string>
 #include "Data.hpp"
 #include <vector>
+#include "Usuario.hpp"
+#include <iostream>
 
   bool Funcionarios::setMatricula(string Matricula) {
     matricula=Matricula;
@@ -49,3 +51,8 @@
     matricula = matricula_;
     SetCoordenadas(coord_x, coord_y);
   }
+  // validação do singleton
+
+Funcionarios::Funcionarios(){
+  cout <<Usuario::instanciaUsuario() << endl;
+}

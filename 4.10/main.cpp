@@ -9,6 +9,9 @@
 #include "Funcionarios.hpp"
 #include "Pessoa.hpp"
 #include "MateriaPrima.hpp"
+#include "Usuario.hpp"
+#include "Cargo.hpp"
+
 
 using namespace std;
 
@@ -144,6 +147,12 @@ mesa->SetMateriaPrima(*parafuso);
       
  
 
+    // Testando funcionalidade singleton, única instancia na classe usuario, após a criação na classe Funcionarios(teste),
+    // o endereço de memoria é o mesmo, garantindo assim a funcionalidade adequada
+    cout <<Usuario::instanciaUsuario() << endl;
+    Funcionarios classe;
+    // 3-Comprovar o funcionamento do singleton do usuário logado.
+    Usuario::instanciaUsuario()->usuarioLogado("074.581.325-10");
 
 
 
