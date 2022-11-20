@@ -94,9 +94,9 @@ int main() {
 Funcionarios funcionario1("João", "074.581.325-10", "20221233", 12.5, 10.1);
 Funcionarios funcionario2("Maria", "074.581.325-20", "20221234", 12.1, 10.2);
 Funcionarios funcionario3("José", "074.581.325-30", "20221235", 12.0, 10.9);
-cout << funcionario1.getCpf() << endl;
-cout << funcionario1.getCpf() << endl;
-cout << funcionario1.getCpf() << endl;
+//cout << funcionario1.getCpf() << endl;
+//cout << funcionario2.getCpf() << endl;
+//cout << funcionario3.getCpf() << endl;
 
 // 6-Cadastrar o produto Mesa (estoque mínimo: 20 unidades), que, para sua produção, necessita das matérias-primas e quantidades abaixo, 
 //que também devem ser cadastradas.
@@ -151,8 +151,11 @@ mesa->SetMateriaPrima(*parafuso);
     // o endereço de memoria é o mesmo, garantindo assim a funcionalidade adequada
     cout <<Usuario::instanciaUsuario() << endl;
     Funcionarios classe;
-    // 3-Comprovar o funcionamento do singleton do usuário logado.
-    Usuario::instanciaUsuario()->usuarioLogado("074.581.325-10");
+    Cargo *cargo = new Cargo;
+    cargo->SetFuncionarios(funcionario1);
+    // // 3-Comprovar o funcionamento do singleton do usuário logado.
+  
+    Usuario::instanciaUsuario()->usuarioLogado("074.581.325-10", cargo);
 
 
 

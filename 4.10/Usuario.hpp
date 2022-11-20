@@ -16,5 +16,5 @@ class Usuario {
   public:
   char getch();
   static Usuario *instanciaUsuario();
-  bool usuarioLogado(string LoginCpf);
+  void usuarioLogado(string LoginCpf, Cargo *cargo);
 };
