@@ -67,7 +67,7 @@ vector<Lote> Estoque::getLotesAntigos()
 
 void Estoque::imprimeEstoque() {
 
-  cout << endl << "Estoque de " << lotesAtuais.front().getProduto().getNome() << endl;
+  cout << endl << "Estoque de " << lotesAtuais.front().getProduto().getNomeProduto() << endl;
 
   for (vector<Lote>::iterator it = lotesAtuais.begin(); it != lotesAtuais.end(); it++)
   {

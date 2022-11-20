@@ -42,12 +42,12 @@ void ValidacaoCNPJ::processaLinha(const std::string &novoCnpj) const {
 // }
 
 
-bool Empresa::setNome(string novoNome) {
+bool Empresa::setNomeEmpresa(string novoNome) {
   nome = novoNome;
   return 1;
 }
 
-bool Empresa::setCnpj(string novoCnpj) {
+bool Empresa::setCnpjEmpresa(string novoCnpj) {
   ValidacaoCNPJ validacao = ValidacaoCNPJ();
   validacao.processaLinha(novoCnpj);
   Cnpj = novoCnpj;
@@ -69,9 +69,9 @@ bool Empresa::setClienteJuridico(Cliente novosClientesJuridicos) {
   return 1;
 }
 
-string Empresa::getNome() { return nome; }
+string Empresa::getNomeEmpresa() { return nome; }
 
-string Empresa::getCnpj() { return Cnpj; }
+string Empresa::getCnpjEmpresa() { return Cnpj; }
 
 // Departamento &Empresa::getDepartamentos(size_t indice) {
 //   return this->Departamentos.at(indice);
@@ -85,21 +85,21 @@ Cliente &Empresa::getclientesJuridicos(size_t indice) {
   return this->clientesJuridicos.at(indice);
 }
 
-bool Empresa::SetEndereco(string end) {
+bool Empresa::SetEnderecoEmpresa(string end) {
   endereco = end;
   return 0;
 }
 
-string Empresa::getEndereco() {
+string Empresa::getEnderecoEmpresa() {
   return endereco;
 }
 
-bool Empresa::SetCoordenadas(float x, float y) {
+bool Empresa::SetCoordenadasEmpresa(float x, float y) {
   pair<float,float> p(x, y);
   coordenadas = p;
   return 0;
 }
 
-pair<float,float> Empresa::getCoordenadas() {
+pair<float,float> Empresa::getCoordenadasEmpresa() {
   return coordenadas;
 }

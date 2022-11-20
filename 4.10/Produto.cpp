@@ -38,11 +38,11 @@
   Produto& Produto::operator=(Produto& segundo) {
     //if(this == &segundo) return this;
 
-    nome = segundo.getNome();
-    codigo = segundo.getCodigo();
-    categoria = segundo.getCategoria();
-    lote_min = segundo.getLote_min();
-    estoque_min = segundo.getEstoque_min();
+    nome = segundo.getNomeProduto();
+    codigo = segundo.getCodigoProduto();
+    categoria = segundo.getCategoriaProduto();
+    lote_min = segundo.getLote_minProduto();
+    estoque_min = segundo.getEstoque_minProduto();
 
     return *this;
   }
@@ -59,72 +59,72 @@
   
 
 
-  bool Produto::SetNome(string s) {
+  bool Produto::SetNomeProduto(string s) {
     this->nome = s;
     return 1;
   }
-  bool Produto::SetCodigo(string s) {
+  bool Produto::SetCodigoProduto(string s) {
     this->codigo = s;
     return 1;
   }
-  bool Produto::SetValor(float f) {
+  bool Produto::SetValorProduto(float f) {
     valores.push_back(f);
     return 1;
   }
-  bool Produto::SetCategoria(string s) {
+  bool Produto::SetCategoriaProduto(string s) {
     this->categoria = s;
     return 1;
   }
-  bool Produto::SetLote_min(int i) {
+  bool Produto::SetLote_minProduto(int i) {
     this->lote_min = i;
     return 1;
   }
   
-  bool Produto::SetEstoque_min(int i) {
+  bool Produto::SetEstoque_minProduto(int i) {
     this->estoque_min = 1;
     return 1;
   }
 
-  string Produto::getNome() const {
+  string Produto::getNomeProduto() const {
     return nome;
   }
-  string Produto::getCodigo() const {
+  string Produto::getCodigoProduto() const {
     return codigo;
   }
-  float Produto::getValor() const {
+  float Produto::getValorProduto() const {
     return valores.back();
   }
-  string Produto::getCategoria() const {
+  string Produto::getCategoriaProduto() const {
     return categoria;
   }
-  int Produto::getLote_min() const {
+  int Produto::getLote_minProduto() const {
     return lote_min;
   }
   
-  int Produto::getEstoque_min() const {
+  int Produto::getEstoque_minProduto() const {
     return estoque_min;
   }
  
   bool Produto::imprimeProduto() {
     cout << endl;
     cout << "Dados do produto: " << endl;
-    cout << "Nome: " << this->getNome() << endl;
-    cout << "Categoria: " << this->getCategoria() << endl;
-    cout << "Codigo: " << this->getCodigo() << endl;
-    cout << "Ultimo valor: " << this->getValor() << endl;
-    cout << "Estoque minimo: " << this->getEstoque_min() << endl;
-    cout << "Lote minimo: " << this->getLote_min() << endl;
+    cout << "Nome: " << this->getNomeProduto() << endl;
+    cout << "Categoria: " << this->getCategoriaProduto() << endl;
+    cout << "Codigo: " << this->getCodigoProduto() << endl;
+    cout << "Ultimo valor: " << this->getValorProduto() << endl;
+    cout << "Estoque minimo: " << this->getEstoque_minProduto() << endl;
+    cout << "Lote minimo: " << this->getLote_minProduto() << endl;
     
 
     return 0;
   }
 
-  bool Produto::SetMateriaPrima(MateriaPrima novaMateriaPrima) {
+  bool Produto::SetMateriaPrimaProduto(MateriaPrima novaMateriaPrima) {
   this->materiasPrimas.push_back(novaMateriaPrima);
   return 1;
   }
 
-  vector<MateriaPrima> Produto::getMateriasPrimas() {
+  vector<MateriaPrima> Produto::getMateriasPrimasProduto() {
     return materiasPrimas;
   }
 

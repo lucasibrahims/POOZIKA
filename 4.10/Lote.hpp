@@ -21,7 +21,7 @@ class Lote{
   Lote();
   Lote(Data Data, string identificador, int QntMin, int QntAtual, Produto produto);
 
-  Data getData();
+  Data getDataLote();
   string getId();
   Produto& getProduto();
   int getQntMin();

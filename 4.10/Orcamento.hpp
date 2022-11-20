@@ -24,7 +24,7 @@ class Orcamento {
     bool RemoverFormaDePagamento(string str);
     bool Atualizar(); //1: Orçamento já está atualizado | 0: Orçamento foi atualizado
     bool EfetivarVenda(Data d, string forma_pag);
-    Data getData();
+    Data getDataOrcamento();
     void imprimeOrcamento();
 
 

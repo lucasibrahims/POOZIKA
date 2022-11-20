@@ -43,15 +43,15 @@ int main() {
     Produto FitaCrepe("Fita Crepe", "99UIUDF3", v1, "Utilidades", 1000, 100);
 
 
-    Lote Lote21(d2, "4141", Ketchup.getLote_min(), 300, Ketchup);
-    Lote Lote22(d2, "4242", Ketchup.getLote_min(), 300, Ketchup);
-    Lote Lote23(d3, "3043", Ketchup.getLote_min(), 300, Ketchup);
+    Lote Lote21(d2, "4141", Ketchup.getLote_minProduto(), 300, Ketchup);
+    Lote Lote22(d2, "4242", Ketchup.getLote_minProduto(), 300, Ketchup);
+    Lote Lote23(d3, "3043", Ketchup.getLote_minProduto(), 300, Ketchup);
          vector<Lote> LotesAtuais2;
          LotesAtuais2.push_back(Lote21);
          LotesAtuais2.push_back(Lote22);
          LotesAtuais2.push_back(Lote23);
 
-     Lote Lote31(d3, "5050", FitaCrepe.getLote_min(), 3000, FitaCrepe);
+     Lote Lote31(d3, "5050", FitaCrepe.getLote_minProduto(), 3000, FitaCrepe);
          vector<Lote> LotesAtuais3;
         LotesAtuais3.push_back(Lote31);
 
@@ -106,35 +106,35 @@ Funcionarios funcionario3("José", "074.581.325-30", "20221235", 12.0, 10.9);
 //(para rodar) ./main
 
 MateriaPrima *madeira = new MateriaPrima;
-madeira->SetNome("Madeira");
-madeira->SetQuantidade(0.450);
-madeira->SetEstoqueMin(1);
-cout<<madeira->getNome()<<endl;
-cout<<madeira->getQuantidade()<<endl;
+madeira->SetNomeMateriaPrima("Madeira");
+madeira->SetQuantidadeMateriaPrima(0.450);
+madeira->SetEstoqueMinMateriaPrima(1);
+cout<<madeira->getNomeMateriaPrima()<<endl;
+cout<<madeira->getQuantidadeMateriaPrima()<<endl;
 cout<<madeira->getUnidMed()<<endl;
-cout<<madeira->getEstoqueMin()<<endl;
+cout<<madeira->getEstoqueMinMateriaPrima()<<endl;
 
 MateriaPrima plastico("Plastico",0.150, 1,"kg");
-cout <<plastico.getNome()<<endl;
-cout <<plastico.getQuantidade()<<endl;
-cout <<plastico.getEstoqueMin()<<endl;
+cout <<plastico.getNomeMateriaPrima()<<endl;
+cout <<plastico.getQuantidadeMateriaPrima()<<endl;
+cout <<plastico.getEstoqueMinMateriaPrima()<<endl;
 cout <<plastico.getUnidMed()<<endl;
 
 MateriaPrima alumínio("Alumínio",0.100, 1,"kg");
 MateriaPrima *parafuso = new MateriaPrima;
-parafuso->SetNome("Parafuso");
-parafuso->SetQuantidade(8);
+parafuso->SetNomeMateriaPrima("Parafuso");
+parafuso->SetQuantidadeMateriaPrima(8);
 parafuso->SetUnidMed("unidades");
-parafuso->SetEstoqueMin(20);
+parafuso->SetEstoqueMinMateriaPrima(20);
 
 
 Produto *mesa = new Produto;
-mesa->SetNome("Mesa");
-mesa->SetEstoque_min(20);
-mesa->SetMateriaPrima(*madeira);
-mesa->SetMateriaPrima(plastico);
-mesa->SetMateriaPrima(alumínio);
-mesa->SetMateriaPrima(*parafuso);
+mesa->SetNomeProduto("Mesa");
+mesa->SetEstoque_minProduto(20);
+mesa->SetMateriaPrimaProduto(*madeira);
+mesa->SetMateriaPrimaProduto(plastico);
+mesa->SetMateriaPrimaProduto(alumínio);
+mesa->SetMateriaPrimaProduto(*parafuso);
 
       
      //Declaring iterator to a vector
@@ -156,7 +156,9 @@ mesa->SetMateriaPrima(*parafuso);
     // // 3-Comprovar o funcionamento do singleton do usuário logado.
   
     Usuario::instanciaUsuario()->usuarioLogado("074.581.325-10", cargo);
-
-
+    Usuario::instanciaUsuario()->SetPermissao("AdicionaMP",0);
+    Usuario::instanciaUsuario()->GetPermissao();
+    cargo->SetNomeCargo("rh");
+    cout << cargo->getNomeCargo() << endl;
 
 };

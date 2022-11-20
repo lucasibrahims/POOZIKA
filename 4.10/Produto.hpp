@@ -21,20 +21,20 @@ class Produto {
           int lote_min, int estoque_min);
   Produto();
 
-  bool SetNome(string s);
-  bool SetCodigo(string s);
-  bool SetValor(float f);
-  bool SetCategoria(string s);
-  bool SetLote_min(int i);
-  bool SetEstoque_min(int i);
-  string getNome() const;
-  string getCodigo() const;
-  float getValor() const;
-  string getCategoria() const;
-  int getLote_min() const;
-  int getEstoque_min() const;
-  vector<MateriaPrima>getMateriasPrimas();
-  bool SetMateriaPrima(MateriaPrima novaMateriaPrima);
+  bool SetNomeProduto(string s);
+  bool SetCodigoProduto(string s);
+  bool SetValorProduto(float f);
+  bool SetCategoriaProduto(string s);
+  bool SetLote_minProduto(int i);
+  bool SetEstoque_minProduto(int i);
+  string getNomeProduto() const;
+  string getCodigoProduto() const;
+  float getValorProduto() const;
+  string getCategoriaProduto() const;
+  int getLote_minProduto() const;
+  int getEstoque_minProduto() const;
+  vector<MateriaPrima>getMateriasPrimasProduto();
+  bool SetMateriaPrimaProduto(MateriaPrima novaMateriaPrima);
   Produto& operator=(Produto& segundo);
   bool operator<(const reference_wrapper<Produto> segundo) const; //Para corrigir um bug de map<>
   //inline bool operator==(Produto& dir);

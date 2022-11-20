@@ -14,11 +14,11 @@ MateriaPrima::MateriaPrima(string nome_, float quantidade_, float estoqueMin, st
     string p[] = {"Kg", "m3", "m2", "m", "unidades"};
 set<std::string> MateriaPrima::unid_cadastradas(p, p+5);
 
-    bool MateriaPrima::SetNome(string n) {
+    bool MateriaPrima::SetNomeMateriaPrima(string n) {
         nome = n;
         return 0;
     }
-    string MateriaPrima::getNome() {
+    string MateriaPrima::getNomeMateriaPrima() {
         return nome;
     }
 
@@ -35,21 +35,21 @@ set<std::string> MateriaPrima::unid_cadastradas(p, p+5);
         return 0;
     }
 
-    bool MateriaPrima::SetQuantidade(float qnt) {
+    bool MateriaPrima::SetQuantidadeMateriaPrima(float qnt) {
         quantidade = qnt;
         return 0;
     }
 
-    float MateriaPrima::getQuantidade() {
+    float MateriaPrima::getQuantidadeMateriaPrima() {
         return quantidade;
     }
 
-    bool MateriaPrima::SetEstoqueMin(float est_min) {
+    bool MateriaPrima::SetEstoqueMinMateriaPrima(float est_min) {
         estoque_min = est_min;
         return 0;
     }
 
-    float MateriaPrima::getEstoqueMin() {
+    float MateriaPrima::getEstoqueMinMateriaPrima() {
         return estoque_min;
     }
 

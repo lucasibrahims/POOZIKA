@@ -46,10 +46,10 @@
   }
 
   Funcionarios::Funcionarios(string nome_, string cpf_, string matricula_, float coord_x, float coord_y) {
-    SetNome(nome_);
-    SetCpf(cpf_);
+    SetNomePessoa(nome_);
+    SetCpfPessoa(cpf_);
     matricula = matricula_;
-    SetCoordenadas(coord_x, coord_y);
+    SetCoordenadasPessoa(coord_x, coord_y);
   }
   // validação do singleton
 

@@ -16,7 +16,7 @@ Lote::Lote (Data data_, string identificador_, int QntMin_, int QntAtual_, Produ
   this -> QntAtual = QntAtual_;
 }
 
-  Data Lote::getData() {
+  Data Lote::getDataLote() {
     return this->data;
   }
 
@@ -50,7 +50,7 @@ void Lote::setQntAtual(int _qntAtual)
 
 Lote Lote::operator=(Lote segundo) {
 
-  data = segundo.getData();
+  data = segundo.getDataLote();
   identificador = segundo.getId();
   QntMin = segundo.getQntMin();
   QntAtual = segundo.getQntAtual();

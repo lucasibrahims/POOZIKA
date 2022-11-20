@@ -24,18 +24,18 @@ class Pessoa {
 
   public:
   
-  bool SetNome(string s);
-  bool SetCpf(string s);
-  bool SetEndereco(string s);
-  bool SetCoordenadas(float x, float y);
-  bool SetEmail(string s);
-  bool SetTelefone(string s);
-  string getNome();
-  string getCpf();
-  string getEndereco();
-  pair<float, float> getCoordenadas();
-  string getEmail();
-  string getTelefone();
+  bool SetNomePessoa(string s);
+  bool SetCpfPessoa(string s);
+  bool SetEnderecoPessoa(string s);
+  bool SetCoordenadasPessoa(float x, float y);
+  bool SetEmailPessoa(string s);
+  bool SetTelefonePessoa(string s);
+  string getNomePessoa();
+  string getCpfPessoa();
+  string getEnderecoPessoa();
+  pair<float, float> getCoordenadasPessoa();
+  string getEmailPessoa();
+  string getTelefonePessoa();
 };
 
 #endif

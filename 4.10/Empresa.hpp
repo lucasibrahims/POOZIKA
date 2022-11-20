@@ -25,18 +25,18 @@ class Empresa{
   public:
     char getch();
     static Empresa *Instance();
-    bool setNome(string);
-    bool setCnpj(string);
-    bool SetEndereco(string s);
-    string getEndereco();
-    bool SetCoordenadas(float x, float y);
-    pair<float,float> getCoordenadas();
+    bool setNomeEmpresa(string);
+    bool setCnpjEmpresa(string);
+    bool SetEnderecoEmpresa(string s);
+    string getEnderecoEmpresa();
+    bool SetCoordenadasEmpresa(float x, float y);
+    pair<float,float> getCoordenadasEmpresa();
     //bool setDepartamentos(Departamento Departamentos);
     bool setClienteFisico(Cliente ClientesFisicos);
     bool setClienteJuridico(Cliente ClientesJuridicos);
     bool dissidioColetivo(float taxa);
-    string getNome();    
-    string getCnpj();
+    string getNomeEmpresa();    
+    string getCnpjEmpresa();
     //Departamento& getDepartamentos(size_t indice);
     Cliente& getclientesFisicos(size_t indice);
     Cliente& getclientesJuridicos(size_t indice);

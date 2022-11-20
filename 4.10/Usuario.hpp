@@ -17,4 +17,7 @@ class Usuario {
   char getch();
   static Usuario *instanciaUsuario();
   void usuarioLogado(string LoginCpf, Cargo *cargo);
+  void SetPermissao( string classe ,bool permissão  );
+  void GetPermissao();
+  map<string,bool> permissoes();
 };
