@@ -1,13 +1,18 @@
 #include "Cliente.hpp"
 #include <string>
 
-Cliente::Cliente(bool cliente_fisico){
-  clienteFisico = cliente_fisico;
+Cliente::Cliente(string _nome, string _cpf, string _endereco, pair<double, double> _coordenadas, string _email, string _telefone, bool _clienteFisico){
+  this->nome = _nome;
+  this->cpf = _cpf;
+  this->endereco = _endereco;
+  this->coordenadas = _coordenadas;
+  this->email = _email;
+  this->telefone = _telefone;
+  this->clienteFisico = _clienteFisico;
 }
 
-Cliente::Cliente() {
-  clienteFisico = 0;
-}
+Cliente::Cliente() {}
+
 
 bool Cliente::SetComprasCliente(vector<Venda> compras) {
   for(vector<Venda>::iterator it = compras.begin(); it != compras.end(); it++) {

@@ -12,7 +12,7 @@ class Empresa{
     string nome;
     string Cnpj;
     string endereco;
-    pair<float, float> coordenadas;
+    pair<double, double> coordenadas;
     // vector<Departamento> Departamentos;
     vector<Cliente> clientesFisicos;
     vector<Cliente> clientesJuridicos;
@@ -29,7 +29,7 @@ class Empresa{
     bool setCnpjEmpresa(string);
     bool SetEnderecoEmpresa(string s);
     string getEnderecoEmpresa();
-    bool SetCoordenadasEmpresa(float x, float y);
+    bool SetCoordenadasEmpresa(double x, double y);
     pair<float,float> getCoordenadasEmpresa();
     //bool setDepartamentos(Departamento Departamentos);
     bool setClienteFisico(Cliente ClientesFisicos);

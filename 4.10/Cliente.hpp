@@ -6,15 +6,26 @@
 #include <string>
 using namespace std;
 
-class Cliente : public Pessoa{
+class Cliente{
   private:
-
+  string nome;
+  string cpf;
+  string endereco;
+  pair<double, double> coordenadas;
+  string email;
+  string telefone;
   bool clienteFisico;
   vector<Venda> Compras;
 
   public:
 
-  Cliente(bool cliente_fisico);
+  Cliente(string nome,
+  string cpf,
+   string endereco,
+   pair<double, double> coordenadas,
+   string email,
+   string telefone, 
+  bool cliente_fisico);
   Cliente();
   string ExportarAtributos();
   bool SetComprasCliente(vector<Venda> compras);

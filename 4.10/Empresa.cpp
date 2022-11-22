@@ -94,8 +94,8 @@ string Empresa::getEnderecoEmpresa() {
   return endereco;
 }
 
-bool Empresa::SetCoordenadasEmpresa(float x, float y) {
-  pair<float,float> p(x, y);
+bool Empresa::SetCoordenadasEmpresa(double x, double y) {
+  pair<double,double> p(x, y);
   coordenadas = p;
   return 0;
 }
