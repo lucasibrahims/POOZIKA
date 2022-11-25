@@ -35,6 +35,7 @@ public:
   bool Promover(Data dataPromocao);
 
   Funcionarios(string nome_, string cpf_, string matricula_, float coord_x=0, float coord_y=0);
+  Funcionarios();
 
 };
 

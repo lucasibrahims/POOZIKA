@@ -23,8 +23,8 @@ class Orcamento {
     bool AdicionarFormaDePagamento(string str);
     bool RemoverFormaDePagamento(string str);
     bool Atualizar(); //1: Orçamento já está atualizado | 0: Orçamento foi atualizado
-    bool EfetivarVenda(Data d, std::string forma_pag, Estoque* estoque);
-    Data getData();
+    bool EfetivarVenda(Data d, string forma_pag, Estoque *estoque);
+    Data getDataOrcamento();
     void imprimeOrcamento();
 
 

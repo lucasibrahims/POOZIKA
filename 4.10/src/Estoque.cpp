@@ -67,7 +67,7 @@ vector<Lote> Estoque::getLotesAntigos()
 
 void Estoque::imprimeEstoque() {
 
-  cout << endl << "Estoque de " << lotesAtuais.front().getProduto().getNome() << endl;
+  cout << endl << "Estoque de " << lotesAtuais.front().getProduto().getNomeProduto() << endl;
 
   for (vector<Lote>::iterator it = lotesAtuais.begin(); it != lotesAtuais.end(); it++)
   {
@@ -93,6 +93,11 @@ void Estoque::imprimeEstoque() {
 
   float Estoque::getQntMP(MateriaPrima* MP) {
     return MPQnt[MP];
+  }
+
+  bool Estoque::InsertLote(Lote l) {
+    lotesAtuais.push_back(l);
+    return 0;
   }
 /*
   bool Estoque::AtualizaMP() {

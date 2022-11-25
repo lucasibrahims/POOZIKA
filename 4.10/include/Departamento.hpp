@@ -13,10 +13,10 @@ vector<Cargo> cargos;
 
 public:
 Departamento (string _nome);
-bool SetNome(string _nome);
-bool SetCargos(Cargo _cargos);
-string getNome();
-vector<Cargo> getCargos();
+bool SetNomeDepartamento(string _nome);
+bool SetCargosDepartamento(Cargo _cargos);
+string getNomeDepartamento();
+vector<Cargo> getCargosDepartamento();
 
 };
 

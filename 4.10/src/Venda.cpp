@@ -10,8 +10,8 @@ this->estoque = estoque;
  }
 
 void Venda::ImprimeOrdem() {
-if(estoque.getEstoqueTotal() < produto.getEstoque_min()){
-  Lote produto (this->data,"ordem de produção", this->produto.getEstoque_min(), 20, this->produto);
+if(estoque.getEstoqueTotal() < produto.getEstoque_minProduto()){
+  Lote produto (this->data,"ordem de produção", this->produto.getEstoque_minProduto(), 20, this->produto);
   estoque.inserir(produto);
 }
 }
@@ -44,7 +44,7 @@ void Venda::AtualizaEstoque(){
         estoque.getLotesAtuais().front().setQntAtual(quantidadeFinal);
       }
     }
-      if(this->estoque.getEstoqueTotal() - this->quantidade < this->produto.getEstoque_min()){
+      if(this->estoque.getEstoqueTotal() - this->quantidade < this->produto.getEstoque_minProduto()){
           this->ImprimeOrdem();
       }
   }

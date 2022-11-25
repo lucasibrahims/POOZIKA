@@ -12,18 +12,23 @@ class MateriaPrima {
     string unid_medida;
     static set<string> unid_cadastradas;
 
+
     public: 
-    bool SetNome(string n);
-    string getNome();
+    MateriaPrima(string nome_, float quantidade, float estoque_min, string unid_medida);
+    MateriaPrima();
+    bool SetNomeMateriaPrima(string n);
+    string getNomeMateriaPrima();
     vector<Fornecedor> getFornecedores();
     bool InsertFornecedor(Fornecedor f);
-    bool SetQuantidade(float qnt);
-    float getQuantidade();
-    bool SetEstoqueMin(float est_min);
-    float getEstoqueMin();
+    bool SetQuantidadeMateriaPrima(float qnt);
+    float getQuantidadeMateriaPrima();
+    bool SetEstoqueMinMateriaPrima(float est_min);
+    float getEstoqueMinMateriaPrima();
     bool InsertUnidMed(string und);
+    bool SetUnidMed(string unidMed);
     string getUnidMed();
-
+    
+   
     bool AtualizaQnt(float qnt); //Quando um produto for criado
     bool gerarOrdem();
     bool validaUnidade(string unid_medida);

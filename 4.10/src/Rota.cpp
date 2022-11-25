@@ -39,7 +39,7 @@ vector<Funcionarios*> Rota::getPassageiros() {
     return passageiros;
 }
 
-Rota::Rota(vector<Funcionarios*> pass, float vm) {
+Rota::Rota(vector<Funcionarios*> pass, float vm=0) {
     velocidade_media = vm;
     passageiros = pass;
     //dist_total = calculaDistRota()

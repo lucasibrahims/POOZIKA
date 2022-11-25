@@ -12,21 +12,14 @@ class Cliente : public Pessoa{
   bool clienteFisico;
   vector<Venda> Compras;
 
-  // string nome;
-  // string cpf;
-  // string endereco;
-  // pair<float, float> coordenadas;
-  // string email;
-  // string telefone;
-
   public:
 
-  Cliente(string nome_, string cpf_, bool cliente_fisico);
+  Cliente(string nome_, string cpf_, bool cliente_fisico_);
   Cliente();
   string ExportarAtributos();
-  bool SetCompras(vector<Venda> compras);
-  bool SetCompras(Venda compra);
-  vector<Venda> getCompras() const;
+  bool SetComprasCliente(vector<Venda> compras);
+  bool SetCompraCliente(Venda compra);
+  vector<Venda> getComprasCliente() const;
 
 };
 

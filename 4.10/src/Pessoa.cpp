@@ -30,12 +30,12 @@ bool validarEmail(const std::string email) {
 
 ////SETTERS////
 
-bool Pessoa::SetNome(string new_name) {
+bool Pessoa::SetNomePessoa(string new_name) {
   nome = new_name;
   return 1;
 }
 
-bool Pessoa::SetCpf(string new_cpf) {
+bool Pessoa::SetCpfPessoa(string new_cpf) {
   
   ValidacaoCPF validacao = ValidacaoCPF();
   if(validacao.linhaValida(new_cpf)){
@@ -48,18 +48,18 @@ bool Pessoa::SetCpf(string new_cpf) {
 
 }
 
-bool Pessoa::SetEndereco(string new_endereco) {
+bool Pessoa::SetEnderecoPessoa(string new_endereco) {
   this->endereco = new_endereco;
   return 1;
 }
 
-bool Pessoa::SetCoordenadas(float x, float y) {
+bool Pessoa::SetCoordenadasPessoa(float x, float y) {
   pair<float, float> c(x, y);
   coordenadas = c;
   return 0;
 }
 
-bool Pessoa::SetEmail(string new_email) {
+bool Pessoa::SetEmailPessoa(string new_email) {
   if (validarEmail(new_email)) {
     this->email = new_email;
     return 1;
@@ -68,21 +68,21 @@ bool Pessoa::SetEmail(string new_email) {
   }
 }
 
-bool Pessoa::SetTelefone(string new_telefone) {
+bool Pessoa::SetTelefonePessoa(string new_telefone) {
   this->telefone = new_telefone;
   return 1;
 }
 
 ////GETTERS////
 
-string Pessoa::getNome() { return nome; }
+string Pessoa::getNomePessoa() { return nome; }
 
-string Pessoa::getCpf() { return cpf; }
+string Pessoa::getCpfPessoa() { return cpf; }
 
-string Pessoa::getEndereco() { return endereco; }
+string Pessoa::getEnderecoPessoa() { return endereco; }
 
-pair<float, float> Pessoa::getCoordenadas() { return coordenadas; }
+pair<float, float> Pessoa::getCoordenadasPessoa() { return coordenadas; }
 
-string Pessoa::getEmail() { return email; }
+string Pessoa::getEmailPessoa() { return email; }
 
-string Pessoa::getTelefone() { return telefone; }
+string Pessoa::getTelefonePessoa() { return telefone; }

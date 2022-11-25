@@ -11,7 +11,7 @@ Orcamento::Orcamento(Cliente c, map< Produto*, int> prod, Data d) {
 
     for(map<Produto*, int>::iterator it = prod.begin(); it != prod.end(); it++) {
         
-        pair<int, float> QntPreco(it->second, it->second * it->first->getValor());
+        pair<int, float> QntPreco(it->second, it->second * it->first->getValorProduto());
         produtos[it->first] = QntPreco;
 
     }
@@ -44,12 +44,12 @@ bool Orcamento::Atualizar() {
     for(map< Produto*, pair<int, float>>::iterator it = produtos.begin(); it != produtos.end(); it++) {
 
         float valorUnitRegistrado = it->second.second / it->second.first;
-        if(it->first->getValor() != valorUnitRegistrado) {
+        if(it->first->getValorProduto() != valorUnitRegistrado) {
             orcamentoAtualizado = false;
-            cout << it->first->getNome() << " foi atualizado de R$" << valorUnitRegistrado << " para R$" << it->first->getValor() << " a unidade" << endl;
+            cout << it->first->getNomeProduto() << " foi atualizado de R$" << valorUnitRegistrado << " para R$" << it->first->getValorProduto() << " a unidade" << endl;
             
             //Atualizando o valor total
-            it->second.second = it->second.first * it->first->getValor();
+            it->second.second = it->second.first * it->first->getValorProduto();
 
         }
     }
@@ -73,6 +73,8 @@ bool Orcamento::EfetivarVenda(Data d, std::string forma_pag, Estoque* estoque) {
 
     }
 
+    Cliente.
+
     return 0;
 }
 
@@ -80,18 +82,18 @@ map< Produto*, pair<int, float>> Orcamento::getProdutos() const {
     return produtos;
 }
 
-Data Orcamento::getData() {
+Data Orcamento::getDataOrcamento() {
     return data;
 }
 
 void Orcamento::imprimeOrcamento() {
     map< Produto*, pair<int, float>>::iterator it = produtos.begin();
 
-    cout << "---- Orcamento de " << it->first->getNome() << " ----" << endl;
+    cout << "---- Orcamento de " << it->first->getNomeProduto() << " ----" << endl;
     cout << "Valores vigentes no dia " << data.getData() << endl;
 
     for(;it != produtos.end(); it++) {
-        cout << it->first->getNome() << ": " << it->second.first << " unidade(s) por R$" << it->second.second << endl;
+        cout << it->first->getNomeProduto() << ": " << it->second.first << " unidade(s) por R$" << it->second.second << endl;
 
     }
 }
