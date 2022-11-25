@@ -23,7 +23,11 @@ class Orcamento {
     bool AdicionarFormaDePagamento(string str);
     bool RemoverFormaDePagamento(string str);
     bool Atualizar(); //1: Orçamento já está atualizado | 0: Orçamento foi atualizado
+<<<<<<< HEAD:4.10/include/Orcamento.hpp
     bool EfetivarVenda(Data d, string forma_pag, Estoque *estoque);
+=======
+    bool EfetivarVenda(Data d, string forma_pag);
+>>>>>>> e68dd169da1c675680c0b4ece2c15371d9757d06:4.10/Orcamento.hpp
     Data getDataOrcamento();
     void imprimeOrcamento();
 
